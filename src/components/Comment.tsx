@@ -3,9 +3,14 @@ import styles from "./Comment.module.css"
 import { Avatar } from "./Avatar"
 import { useState } from "react"
 import { format, formatDistanceToNow } from "date-fns"
-import ptBR from "date-fns/locale/pt-BR"
+import { ptBR } from "date-fns/locale/pt-BR"
 
-export function Comment({ content, time, onDeleteComment }) {
+interface CommentProps {
+    content: string
+    time: Date
+    onDeleteComment: (commentToDelete: string) => void
+}
+export function Comment({ content, time, onDeleteComment }: CommentProps) {
     const [likeCount, setLikeCount] = useState(0)
     const publishedDateFormatted = format(time, "d 'de' LLLL 'às' HH:mm'h'", {
         locale: ptBR,

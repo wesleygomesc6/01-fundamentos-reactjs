@@ -1,5 +1,3 @@
 {
-    "extends": [
-        "eslint-config-creago/react"
-    ]
+  "extends": "eslint-config-creago/react"
 }
